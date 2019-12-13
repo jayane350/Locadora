@@ -94,8 +94,6 @@ public class CadastrarCliente extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel7.setText("Email:");
 
-        jTextField3.setText("jTextField3");
-
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel8.setText("CPF:");
 

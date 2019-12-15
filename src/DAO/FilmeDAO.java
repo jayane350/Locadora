@@ -2,6 +2,10 @@
  
 package DAO;
 
+import Modelo.Filme;
+import java.sql.Connection;
+import java.util.List;
+
 
 
 public class FilmeDAO {
@@ -12,6 +16,10 @@ public class FilmeDAO {
     private int cod_categoria;
     private int cod_classificacao;
     private String capa;
+
+    public FilmeDAO(Connection con) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     public int getCodigo() {
         return codigo;
@@ -67,6 +75,10 @@ public class FilmeDAO {
 
     public void setCapa(String capa) {
         this.capa = capa;
+    }
+
+    public List<Filme> Pesquisar_Cod_Filme(int codigo) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

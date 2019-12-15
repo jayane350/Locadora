@@ -1,11 +1,17 @@
 
 package DAO;
 
+import java.sql.Connection;
+
 
 public class ClassificacaoDAO {
     private int codigo;
     private String nome;
     private double preco;
+
+    public ClassificacaoDAO(Connection con) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     public int getCodigo() {
         return codigo;

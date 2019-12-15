@@ -1,117 +1,97 @@
-
 package DAO;
 
-
+import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import Modelo.*;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 
- 
-public class DVDDAO {
-    private int codigo;
-    private int cod_filme;
-    private String situacao;
-    private double preco;
-    private String data_compra;
-
-    public int getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
-
-    public int getCod_filme() {
-        return cod_filme;
-    }
-
-    public void setCod_filme(int cod_filme) {
-        this.cod_filme = cod_filme;
-    }
-
-    public String getSituacao() {
-        return situacao;
-    }
-
-    public void setSituacao(String situacao) {
-        this.situacao = situacao;
-    }
-
-    public double getPreco() {
-        return preco;
-    }
-
-    public void setPreco(double preco) {
-        this.preco = preco;
-    }
-
-    public String getData_compra() {
-        return data_compra;
-    }
-
-    public void setData_compra(String data_compra) {
-        this.data_compra = data_compra;
+public class DVDDAO extends ExecuteSQL {
+    
+    public DVDDAO(Connection con) {
+        super(con);
     }
     
-    
-    
-    public boolean Testar_DVD (int cod){    
-        boolean teste = false;
+    public String Inserir_DVD(DVD a) {
         
-        try{
-            String sql = "select iddvd from where iddvd=" + cod+ "";
-            PreparedStatement ps = getCon().preparedStatement(sql);
-            ResultSet rs = ps.executeQuery();
+        try {
+            String sql = "insert into dvd values(0,?,?,?,?,?)";
+            PreparedStatement ps = getCon().prepareStatement(sql);
             
-            if(rs !=null){
-               while (rs.next()) {
-                   teste = true;
-               }
-            }
-        }catch (SQLException ex) {
-           ex.getMessage();
-            }
-            return teste;
-        
-           
-    }
-              
-     public boolean Testar_Situacao(int cod) {
-        boolean teste = false;
-        
-        try{
-            String sql = "select iddvd from where iddvd=" + cod+ ""+"and situacao='disponivel'";
-            PreparedStatement ps = getCon().preparedStatement(sql);
-            ResultSet rs = ps.executeQuery();
+            ps.setInt(1, a.getCod_filme());
+            ps.setDouble(2, a.getPreco());
+            ps.setString(3, a.getData_compra());
+            ps.setString(4, a.getSituacao());
             
-            if(rs !=null){
-               while (rs.next()) {
-                   teste = true;
-               }
+            if (ps.executeUpdate() > 0) {
+                return "Inserido com sucesso!";
+            } else {
+                return "Erro ao inserir";
             }
-        }catch (SQLException ex) {
-           ex.getMessage();
+        } catch (SQLException e) {
+            return e.getMessage();
+        }
+    }
+    
+    public String Excluir_DVD(DVD a){
+        String sql = "delete from dvd where idfilme = ?";
+        try {
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ps.setInt(1, a.getCod_filme());
+            
+            if (ps.executeUpdate() > 0) {
+                return "Excluido com sucesso";
+            } else {
+                return "Erro ao excluir";
             }
-            return teste;
-          
-     }   
-        public void AtualizarDate(){
-           Date date = new Date();
-           SimpleDateFormat data = new SimpleDateFormat("dd/MM/yyyy");
-           SimpleDateFormat hora = new SimpleDateFormat("hh:mm");
-           jTF_DataLocacao.setText(data.format(date));
-           jTF_Horas.setText(horas.format(date));
-           
-           
-           
-        }     
+        } catch (SQLException e) {
+            return e.getMessage();
+        }
+    }
+    
+    public boolean Testar_DVD(int cod) {
+        boolean teste = false;
+        try {
+            
+            String sql = "select iddvd from dvd where iddvd =" + cod + "";
+           PreparedStatement ps = getCon().prepareStatement(sql);
+             ResultSet rs = ps.executeQuery();
+             
+             if (rs != null) {
+                 while (rs.next()) {
+                     teste = true;
+                 }
+             }
+             
+        } catch (SQLException ex) {
+        }
+        return teste;
+    }
+    
+    public boolean Testar_Situacao(int cod) {
+        boolean teste = false;
+                try {
+                    
+                    String sql = "select iddvd from dvd where iddvd =" + cod + ""
+                            + " and situacao = 'Disponivel'";
+                    PreparedStatement ps = getCon().prepareStatement(sql);
+                    ResultSet rs = ps.executeQuery();
+                    
+                    if (rs != null) {
+                        while (rs.next()) {
+                            teste = true;
+                        }
+                    }
+                    
+                } catch (SQLException ex) {
+                }
+                return teste;
+    }
 
-    private Object getCon() {
+    public List<DVD> ListarCodFilme(int cod) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
-    

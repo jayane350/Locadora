@@ -19,7 +19,7 @@ public class FuncionarioDAO extends ExecuteSQL {
     while (rs.next()){
     Funcionario a = new Funcionario();
     a.setLogin(rs.getString(1));
-        a.SetSenha(rs.getString(2));
+        a.Senha(rs.getString(2));
         FinalResulte = true;
             }
         }

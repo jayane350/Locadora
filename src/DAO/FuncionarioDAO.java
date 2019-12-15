@@ -28,4 +28,8 @@ public class FuncionarioDAO extends ExecuteSQL {
      }
      return FinalResulte;
  }   
+
+    public boolean Logar(String login, String senha) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

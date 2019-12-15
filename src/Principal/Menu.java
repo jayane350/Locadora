@@ -128,7 +128,7 @@ public class Menu extends javax.swing.JFrame {
             }
 
             private void jMenuItem10ActionPerformed(ActionEvent evt) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                throw new UnsupportedOperationException("Not supported yet."); 
             }
         });
         jMenu2.add(jMenuItem10);
@@ -165,7 +165,7 @@ public class Menu extends javax.swing.JFrame {
             }
 
             private void jMenuItem18ActionPerformed(ActionEvent evt) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                throw new UnsupportedOperationException("Not supported yet."); 
             }
         });
         jMenu5.add(jMenuItem18);

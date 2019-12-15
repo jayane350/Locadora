@@ -457,6 +457,7 @@ public class ControleLocacao extends javax.swing.JFrame {
      listaCLA = (List<Modelo.Classificacao>) cla.ListaPrecoClassificacao(codigo);
      for (Classificacao a : listaCLA) {
          double preco = a.getPreco();
+        
          jTF_Valor.setText("" + preco + "0");
      }
      Conexao.FecharConexao(con);

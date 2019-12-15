@@ -96,12 +96,10 @@ public class Menu extends javax.swing.JFrame {
             }
 
             private void jMenuItem5ActionPerformed(ActionEvent evt) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                throw new UnsupportedOperationException("Not supported yet.");  
             }
 
-            private void jMenuItem5ActionPerformed(ActionEvent evt) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            }
+           
         });
         jMenu1.add(jMenuItem5);
 

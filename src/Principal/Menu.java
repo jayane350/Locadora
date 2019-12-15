@@ -1,6 +1,8 @@
 
 package Principal;
 
+import java.awt.event.ActionEvent;
+
 
 public class Menu extends javax.swing.JFrame {
 
@@ -74,6 +76,10 @@ public class Menu extends javax.swing.JFrame {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
             }
+
+            private void jMenuItem1ActionPerformed(ActionEvent evt) {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
         });
         jMenu1.add(jMenuItem1);
 
@@ -87,6 +93,14 @@ public class Menu extends javax.swing.JFrame {
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem5ActionPerformed(evt);
+            }
+
+            private void jMenuItem5ActionPerformed(ActionEvent evt) {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            private void jMenuItem5ActionPerformed(ActionEvent evt) {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
         });
         jMenu1.add(jMenuItem5);
@@ -111,6 +125,10 @@ public class Menu extends javax.swing.JFrame {
         jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem10ActionPerformed(evt);
+            }
+
+            private void jMenuItem10ActionPerformed(ActionEvent evt) {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
         });
         jMenu2.add(jMenuItem10);
@@ -144,6 +162,10 @@ public class Menu extends javax.swing.JFrame {
         jMenuItem18.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem18ActionPerformed(evt);
+            }
+
+            private void jMenuItem18ActionPerformed(ActionEvent evt) {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
         });
         jMenu5.add(jMenuItem18);

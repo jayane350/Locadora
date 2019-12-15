@@ -92,6 +92,6 @@ public class DVDDAO extends ExecuteSQL {
     }
 
     public List<DVD> ListarCodFilme(int cod) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet."); 
     }
 }

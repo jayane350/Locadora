@@ -1,26 +1,36 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Modelo;
 
-/**
- *
- * @author rodri
- */
 public class Listar {
+    
+    static private int coddvd;
+    static private int codaluguel;
+    static private int codcliente;
 
-    public void setCoddvd(Integer iddvd) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public static int getCoddvd() {
+        return coddvd;
     }
 
-    public void setCodaluguel(Integer idaluguel) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public static void setCoddvd(int coddvd) {
+        Listar.coddvd = coddvd;
     }
 
-    public void setCodcliente(Integer idcliente) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public static int getCodaluguel() {
+        return codaluguel;
+    }
+
+    public static void setCodaluguel(int codaluguel) {
+        Listar.codaluguel = codaluguel;
+    }
+
+    public static int getCodcliente() {
+        return codcliente;
+    }
+
+    public static void setCodcliente(int codcliente) {
+        Listar.codcliente = codcliente;
     }
     
+      
 }
+

@@ -1,41 +1,43 @@
 
 package DAO;
 
+import Modelo.Classificacao;
+import Modelo.Cliente;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 
 
-public class ClassificacaoDAO {
-    private int codigo;
-    private String nome;
-    private double preco;
+public class ClassificacaoDAO extends ExecuteSQL {
 
     public ClassificacaoDAO(Connection con) {
-        throw new UnsupportedOperationException("Not supported yet.");  
+        super(con);
     }
 
-    public int getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public double getPreco() {
-        return preco;
-    }
-
-    public void setPreco(double preco) {
-        this.preco = preco;
-    }
     
-}
+     public void ListarPrecoClassificacao () {
+        System.out.println("suahusahshs");
+    
+    
+    public String Inserir_Cliente(Cliente a) {
+        String sql = "insert into cliente values (0,?,?,?,?,?,?,?,?,?,?)";
+        try {
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            
+            ps.setString(1,a.getNome());
+            ps.setString(2,a.getNascimento());
+            ps.setString(3,a.getRG ());
+            ps.setString(4,a.getCPF());
+            ps.setString(5,a.getEmail());
+            ps.setString(6,a.getTelefone());
+            ps.setString(7,a.getBairro());
+            ps.setString(8,a.getRua());
+            ps.setInt (9, a.getNumero());
+            ps.setString(10,a.getCEP());
+            
+            
+            if (ps.executeUpdate() > 0) {
+                return "Inserido com  sucesso.";
+            }
+      
 
+        }

@@ -45,4 +45,8 @@ public class FuncionarioDAO extends ExecuteSQL {
     public List<Funcionario> CapturarFuncionario(int cod) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    public void Inserir_Funcionario(Funcionario a) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

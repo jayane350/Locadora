@@ -2,6 +2,7 @@ package DAO;
         
 import Modelo.Funcionario;
 import java.sql.*;
+import java.util.List;
 
 public class FuncionarioDAO extends ExecuteSQL {
     public FuncionarioDAO(Connection con) {
@@ -30,6 +31,18 @@ public class FuncionarioDAO extends ExecuteSQL {
  }   
 
     public boolean Logar(String login, String senha) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public boolean Testar_Funcionario(int cod) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void Alterar_Funcionario(Funcionario a) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public List<Funcionario> CapturarFuncionario(int cod) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

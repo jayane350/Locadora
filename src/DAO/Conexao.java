@@ -24,7 +24,7 @@ public class Conexao{
      }
         public static void FecharConexao(Connection con){
             try{
-                con.close();
+                 con.close();
         }catch (Exception e){
         System.out.println(e.getMessage());
     }

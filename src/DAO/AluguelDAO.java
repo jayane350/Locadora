@@ -320,4 +320,16 @@ public String Alterar_Aluguel(Aluguel a) {
     }
 }
 
+    public List<Aluguel> Pesquisa_Coddvd_Aluguel(int iddvd) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public List<Aluguel> Pesquisa_Codcli_Aluguel(int idCli) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public List<Aluguel> ListarAluguel() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

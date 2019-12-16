@@ -100,6 +100,10 @@ public class FilmeDAO {
     public List<Filme> ConsultaCodigoFilme(String toString) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    public void Excluir_Filme(Filme a) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
     

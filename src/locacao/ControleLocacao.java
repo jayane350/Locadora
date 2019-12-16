@@ -1,5 +1,4 @@
 
-
 package Locacao;
 
 import DAO.ClassificacaoDAO;
@@ -22,14 +21,14 @@ import javax.swing.JOptionPane;
 
 public class ControleLocacao extends javax.swing.JFrame {
 
-    
+   
     public ControleLocacao() {
         initComponents();
     }
 
     
     @SuppressWarnings("unchecked")
-                            
+                             
     private void initComponents() {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
@@ -364,14 +363,14 @@ public class ControleLocacao extends javax.swing.JFrame {
         );
 
         pack();
-    }                       
+    }                      
 
     private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {                                            
-        
+       
     }                                           
 
     private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {                                            
-       
+        
     }                                           
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {                                         
@@ -450,14 +449,12 @@ public class ControleLocacao extends javax.swing.JFrame {
                  + a.getCapa() + "/"));
      }
      ClassificacaoDAO cla = new ClassificacaoDAO(con);
-
      List<Classificacao> listaCLA = new ArrayList<>();
      String b = jTF_Classificacao.getText();
      int codigo = Integer.parseInt(b);
-     listaCLA = (List<Modelo.Classificacao>) cla.ListaPrecoClassificacao(codigo);
+     listaCLA = cla.ListarPrecoClassificacao(codigo);
      for (Classificacao a : listaCLA) {
          double preco = a.getPreco();
-        
          jTF_Valor.setText("" + preco + "0");
      }
      Conexao.FecharConexao(con);
@@ -537,5 +534,5 @@ public class ControleLocacao extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField9;
     private javax.swing.JLabel jlbfoto;
-                    
+                      
 }

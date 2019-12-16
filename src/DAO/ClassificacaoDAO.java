@@ -1,56 +1,100 @@
 
+
+
+
 package DAO;
 
-import Modelo.Classificacao;
-import Modelo.Cliente;
 import java.sql.Connection;
+import Modelo.*;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
-
 
 public class ClassificacaoDAO extends ExecuteSQL {
 
     public ClassificacaoDAO(Connection con) {
         super(con);
     }
-
-    
-     public void ListarPrecoClassificacao () {
-        System.out.println("suahusahshs");
-    
-    
-    public String Inserir_Cliente(Cliente a) {
-        String sql = "insert into cliente values (0,?,?,?,?,?,?,?,?,?,?)";
+    public String Inserir_Classificacao(Classificacao a) {
         try {
+            String sql = "insert into classificacao values(0,?,?)";
             PreparedStatement ps = getCon().prepareStatement(sql);
-            
-            ps.setString(1,a.getNome());
-            ps.setString(2,a.getNascimento());
-            ps.setString(3,a.getRG ());
-            ps.setString(4,a.getCPF());
-            ps.setString(5,a.getEmail());
-            ps.setString(6,a.getTelefone());
-            ps.setString(7,a.getBairro());
-            ps.setString(8,a.getRua());
-            ps.setInt (9, a.getNumero());
-            ps.setString(10,a.getCEP());
-            
+
+            ps.setString(1, a.getNome());
+            ps.setDouble(2, a.getPreco());
             
             if (ps.executeUpdate() > 0) {
-                return "Inserido com  sucesso.";
+                return "Inserido com sucesso!";
+            } else {
+                return "Erro ao inserir!";
             }
-      
-
+        } catch (SQLException e) {
+            return e.getMessage();
         }
+    } 
 
-    public List<Classificacao> ListarComboClassificacao() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void Excluir_Classificacao(Classificacao a) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+     public List<Classificacao> ListarComboClassificacao(){
+        String sql = "select nome from classificacao order by nome";
+        List<Classificacao> lista = new ArrayList<>();
+        try {
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            if (rs != null) {
+                while (rs.next()) {
+                    Classificacao a = new Classificacao();
+                    a.setNome(rs.getString(1));
+                    lista.add(a);
+                }
+                return lista;
+            } else {
+                return null;
+            }
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     public List<Classificacao> ConsultaCodigoClassificacao(String nome) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sql = "select idclassificacao from classificacao where nome = '"+ nome +"'";
+        List<Classificacao> lista = new ArrayList<>();
+        try {
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            if (rs != null) {
+                while (rs.next()) {
+                    Classificacao a = new Classificacao();
+                    a.setCodigo(rs.getInt(1));
+                    lista.add(a);
+                }
+                return lista;
+            } else {
+                return null;
+            }
+        } catch (Exception e) {
+            return null;
+        }
     }
+    
+    public String Excluir_Classificacao(Classificacao a){
+        String sql = "delete from classificacao where idclassificacao = ? and nome = ?";
+        try {
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ps.setInt(1, a.getCodigo());
+            ps.setString(2, a.getNome());
+            
+            if (ps.executeUpdate() > 0) {
+                return "Excluido com sucesso";
+            } else {
+                return "Erro ao excluir";
+            }
+        } catch (SQLException e) {
+            return e.getMessage();
+        }
+    }
+
+    public List<Classificacao> ListarPrecoClassificacao(int codigo) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+}

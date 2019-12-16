@@ -5,6 +5,7 @@ import Modelo.Classificacao;
 import Modelo.Cliente;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.util.List;
 
 
 public class ClassificacaoDAO extends ExecuteSQL {
@@ -41,3 +42,15 @@ public class ClassificacaoDAO extends ExecuteSQL {
       
 
         }
+
+    public List<Classificacao> ListarComboClassificacao() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void Excluir_Classificacao(Classificacao a) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public List<Classificacao> ConsultaCodigoClassificacao(String nome) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
